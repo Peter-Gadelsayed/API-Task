@@ -1,8 +1,8 @@
 
-var cardContainer = document.getElementById("card-cont")
+const cardContainer = document.getElementById("card-cont")
 
 
-var http = new XMLHttpRequest();
+let http = new XMLHttpRequest();
 
 http.open("get", "https://jsonplaceholder.typicode.com/comments");
 
@@ -10,18 +10,18 @@ http.send();
 
 http.readyState;
 
-http.addEventListener("readystatechange", function (e) {
+http.addEventListener("readystatechange", (e) => {
 
     if (http.readyState === 4 && http.status === 200) {
-        var result = JSON.parse(http.response);
+        let result = JSON.parse(http.response);
         console.log(result);
 
-        for (var i = 0; i < result.length; i++) {
-            var element = result[i];
+        for (let i = 0; i < result.length; i++) {
+            let element = result[i];
             console.log(element);
 
             // insertAdjacentHTML('beforeend',) by AI "_"
-            
+
             cardContainer.insertAdjacentHTML('beforeend', `  
             
             
